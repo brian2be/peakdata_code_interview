@@ -1,9 +1,12 @@
-import requests
-import re, bs4, math
-from joblib import Parallel, delayed
+import math
 import random
-from pymongo import InsertOne, DeleteOne, ReplaceOne
+import re
+
+import bs4
 import pymongo
+import requests
+from joblib import Parallel, delayed
+from pymongo import DeleteOne, InsertOne, ReplaceOne
 
 
 class DBProxyHandler:

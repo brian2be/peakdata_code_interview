@@ -1,37 +1,33 @@
 #!flask/bin/python
-import os
-import sys
-from multiprocessing.pool import ThreadPool
-
-from requests.exceptions import (
-    ProxyError,
-    ConnectTimeout,
-    SSLError,
-    ConnectionError,
-    ChunkedEncodingError,
-    ReadTimeout,
-)
-
-import json
-from datetime import datetime, timedelta
-import pymongo
-import traceback
-import pickle
 import base64
-from proxyhandling import DBProxyHandler
-from captcha_exception import CaptchaError
-import multiprocessing
-from bs4 import BeautifulSoup
 import bz2
-from pdfunctions import timeDiffToNow, SkipURL
-from webcacheclient import dbNormalizeURL, isValidURL
-import requests
-
-from typing import Union
+import json
+import multiprocessing
 import os
+import pickle
 import re
+import sys
+import traceback
+from datetime import datetime, timedelta
+from multiprocessing.pool import ThreadPool
+from typing import Union
 
-from flask import Flask, jsonify, abort, make_response, request
+import pymongo
+import requests
+from bs4 import BeautifulSoup
+from captcha_exception import CaptchaError
+from flask import Flask, abort, jsonify, make_response, request
+from pdfunctions import SkipURL, timeDiffToNow
+from proxyhandling import DBProxyHandler
+from requests.exceptions import (
+    ChunkedEncodingError,
+    ConnectionError,
+    ConnectTimeout,
+    ProxyError,
+    ReadTimeout,
+    SSLError,
+)
+from webcacheclient import dbNormalizeURL, isValidURL
 
 app = Flask(__name__)
 
