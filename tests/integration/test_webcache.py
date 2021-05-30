@@ -1,8 +1,8 @@
 import json
-from webcacheclient import WebCacheClient
+from peakdata.webcacheclient import WebCacheClient
 
 
-def play_get_request():
+def test_play_get_request():
     client = WebCacheClient()
 
     urlList = [f"https://nominatim.openstreetmap.org/search/Credit Suisse,{zipcode},Switzerland?osm_type=N&format=json"
@@ -11,7 +11,7 @@ def play_get_request():
     print(ret)
 
 
-def play_get_request():
+def test_play_get_request():
     import sys
     client = WebCacheClient()
 
@@ -21,7 +21,7 @@ def play_get_request():
     print(ret)
 
 
-def play_get_request_without_proxies():
+def test_play_get_request_without_proxies():
     client = WebCacheClient()
 
     urlList = ["http://localhost:7070/search/Switzerland?osm_type=N&format=json",
@@ -30,7 +30,7 @@ def play_get_request_without_proxies():
     print(ret)
 
 
-def play_post_request():
+def test_play_post_request():
     client = WebCacheClient()
 
     urlList = [f"https://search.wdoms.org?sSchoolName={medschool}&iPageNumber=1" for medschool in
@@ -39,7 +39,7 @@ def play_post_request():
     print(ret)
 
 
-def play_post_data_request():
+def test_play_post_data_request():
     client = WebCacheClient()
 
     urlList = [("https://search.wdoms.org", json.dumps({'sSchoolName': medschool, 'iPageNumber': 1})) for medschool in
@@ -48,7 +48,7 @@ def play_post_data_request():
     print(ret)
 
 
-def getProxy():
+def test_getProxy():
     client = WebCacheClient()
     print(client.getProxyList(10000))
 
@@ -57,5 +57,5 @@ if __name__ == '__main__':
     # play_post_request()
     # play_post_data_request()
     play_get_request()
-    #play_get_request_without_proxies()
+    # play_get_request_without_proxies()
     # getProxy()

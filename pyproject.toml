@@ -1,0 +1,30 @@
+[tool.poetry]
+name = "peakdata_code_interview"
+version = "0.1.0"
+description = ""
+authors = ["Brian Bartek <bartkowiak.brian@gmail.com>"]
+packages = [
+    { include = "src/peakdata" },
+]
+[tool.poetry.dependencies]
+python = "^3.7"
+furl = "^2.1.2"
+requests = "^2.25.1"
+
+[tool.poetry.dev-dependencies]
+pytest = "^6.2.4"
+black = "^21.5b1"
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "-ra -q -s -vv"
+testpaths = [
+    "tests",
+]
+
+[build-system]
+requires = [
+    "poetry>=0.12",
+    "setuptools!=50.0",
+]
+build-backend = "poetry.masonry.api"
