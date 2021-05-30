@@ -4,7 +4,7 @@ setup:
 	poetry run pre-commit install
 
 test:
-	poetry run pytest tests/unit
+	poetry run pytest --cov=src tests/unit
 
 test-with-integration:
 	poetry run pytest tests/
