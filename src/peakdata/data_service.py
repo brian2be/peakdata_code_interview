@@ -15,7 +15,7 @@ from typing import Union
 import pymongo
 import requests
 from bs4 import BeautifulSoup
-from captcha_exception import CaptchaError
+from captcha_execution import CaptchaError
 from flask import Flask, abort, jsonify, make_response, request
 from pdfunctions import SkipURL, timeDiffToNow
 from proxyhandling import DBProxyHandler
