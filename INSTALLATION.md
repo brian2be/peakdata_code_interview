@@ -12,7 +12,7 @@ however, it will only check and allow for dev to manually (or not) fix:
 - check-yaml
 - check-added-large-files
 - black formatting
-
+- isort
 
 # Installation
 
