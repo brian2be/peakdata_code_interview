@@ -2,6 +2,18 @@
 - `python` version at least 3.7.3
 - `poetry` package manager
 
+# General
+
+This package has pre-commit installed for better dev experience. Be aware, that pre-commit hook will auto fix:
+- trailing-whitespace
+- end-of-file
+
+however, it will only check and allow for dev to manually (or not) fix:
+- check-yaml
+- check-added-large-files
+- black formatting
+
+
 # Installation
 
 To install locally simply run `make setup`
